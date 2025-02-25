@@ -1,0 +1,60 @@
+# .gitignore
+
+### Ambiente Virtual ###
+venv/
+.env/
+.venv/
+env/
+pythonenv/
+
+### Python ###
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.so
+
+### Banco de Dados ###
+*.sqlite3
+*.db
+*.dump
+
+### IDE ###
+.vscode/
+.idea/
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+### Ambiente/Dependências ###
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.staging
+Pipfile
+Pipfile.lock
+poetry.lock
+pyproject.toml
+
+### Logs/Arquivos Temporários ###
+*.log
+logs/
+*.swp
+*.swo
+*.tmp
+
+### Testes/Cobertura ###
+.coverage
+htmlcov/
+.pytest_cache/
+test-reports/
+
+### Django ###
+staticfiles/
+media/
+*.mo
