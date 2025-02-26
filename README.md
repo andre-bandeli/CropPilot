@@ -39,36 +39,65 @@ O **CropPilot** utiliza algoritmos genéticos para calcular **rotas otimizadas**
 ### Endpoint: `POST /api/optimize/`  
 **Requisição:**  
 ```json  
-{  
-    "points": [  
-        {  
-            "name": "Talhão A",  
-            "latitude": -29.6875,  
-            "longitude": -53.7892  
-        },  
-        {  
-            "name": "Talhão B",  
-            "latitude": -29.6913,  
-            "longitude": -53.7810  
-        }  
-    ],  
-    "machine": {  
-        "capacity_kg": 2000,  
-        "speed_kmh": 8  
-    }  
-}  
+{{
+    "machine_id": 1,
+    "points": [
+        {
+            "name": "Sede da Fazenda",
+            "latitude": -15.5400,
+            "longitude": -55.1700,
+            "is_depot": true,
+            "estimated_load": 0
+        },
+        {
+            "name": "Talhão 1",
+            "latitude": -15.5402,
+            "longitude": -55.1703,
+            "is_depot": false,
+            "estimated_load": 500
+        },
+                {
+            "name": "Talhão 2",
+            "latitude": -15.1402,
+            "longitude": -55.1703,
+            "is_depot": false,
+            "estimated_load": 500
+        },
+                {
+            "name": "Talhão 3",
+            "latitude": -16.1402,
+            "longitude": -55.1703,
+            "is_depot": false,
+            "estimated_load": 500
+        },
+                {
+            "name": "Talhão 4",
+            "latitude": -16.1402,
+            "longitude": -55.1723,
+            "is_depot": false,
+            "estimated_load": 500
+        }
+    ]
+}
 ```
 
 **Resposta (Sucesso 200):**
 ```json
-{  
-    "optimized_route": [2, 1, 0],  
-    "total_distance_km": 8.7,  
-    "estimated_fuel_liters": 42.3  
-}  
+{
+    "optimized_route": [
+        [
+            "Sede da Fazenda",
+            "Talhão 2",
+            "Talhão 1",
+            "Talhão 4",
+            "Talhão 3",
+            "Sede da Fazenda"
+        ]
+    ],
+    "total_distance": 222.60383988644406,
+    "message": "Rota otimizada com sucesso!"
+}
 ```
-
-
 
 ---
 
